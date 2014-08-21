@@ -18,6 +18,7 @@ RUN rm -fr /app && mkdir /app && \
 # Add script to create 'concrete5' DB
 ADD run.sh run.sh
 RUN chmod 755 /*.sh
+RUN chmod -R 777 /var/www/html/config/ /var/www/html/files/ /var/www/html/packages/
 
 EXPOSE 80
 CMD ["/run.sh"]
