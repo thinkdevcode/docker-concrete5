@@ -6,7 +6,7 @@ then
 fi
 
 sleep 5
-DB_EXISTS=$(mysql -uroot -p$DB_PASSWORD -h$DB_PORT_3306_TCP_ADDR -P$DB_PORT_3306_TCP_PORT -e "SHOW DATABASES LIKE 'concrete5';" | grep "concrete5" > /dev/null; echo "$?")
+DB_EXISTS=$(mysql -uroot -p$DB_PASSWORD -h$DB_1_PORT_3306_TCP_ADDR -P$DB_1_PORT_3306_TCP_PORT -e "SHOW DATABASES LIKE 'concrete5';" | grep "concrete5" > /dev/null; echo "$?")
 
 if [[ DB_EXISTS -eq 1 ]]; 
 then
@@ -14,7 +14,7 @@ then
         RET=1
         while [[ RET -ne 0 ]]; do
                 sleep 5
-                mysql -uroot -p$DB_PASSWORD -h$DB_PORT_3306_TCP_ADDR -P$DB_PORT_3306_TCP_PORT -e "CREATE DATABASE $DB_NAME"
+                mysql -uroot -p$DB_PASSWORD -h$DB_1_PORT_3306_TCP_ADDR -P$DB_1_PORT_3306_TCP_PORT -e "CREATE DATABASE $DB_NAME"
                 RET=$?
         done
         echo "=> Done!"
