@@ -19,7 +19,7 @@ then
         done
         echo "=> Done!"
 else
-        echo "=> Skipped creation of database $DB_NAME – it already exists."
+        echo "=> Skipped creation of database $DB_NAME - it already exists."
 fi
 
 touch /.mysql_db_created
