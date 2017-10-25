@@ -9,11 +9,11 @@ RUN apt-get update && \
 
 # Download Concrete5.7 into /app
 RUN rm -fr /app && mkdir /app && \
- curl -O http://www.concrete5.org/download_file/-/view/74619 && \ 
- unzip 74619 -d /tmp  && \
+ curl -O http://www.concrete5.org/download_file/-/view/96959 && \ 
+ unzip 96959 -d /tmp  && \
  cp -a /tmp/concrete*/. /app && \
  rm -rf /tmp/concrete* && \
- rm 74619
+ rm 96959
 
 # Add script to create 'concrete5' DB
 ADD run.sh run.sh
